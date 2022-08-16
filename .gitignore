@@ -3,3 +3,5 @@ thunder-tests
 # Keep environment variables out of version control
 .env
 .env.test
+.env.local
+.env.docker
