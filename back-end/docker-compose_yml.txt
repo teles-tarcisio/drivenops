@@ -10,7 +10,7 @@ services:
     networks:
       - drivenops_network
     volumes:
-      - postgres:/var/lib/postgresql/data
+      - postgres:/var/lig/postgresql/data
   
   node_app_drivenops:
     container_name: node_app_drivenops
@@ -30,3 +30,5 @@ networks:
 
 volumes:
   postgres:
+
+# o conteudo deste compose deverá estar no compose + externo do projeto todo
