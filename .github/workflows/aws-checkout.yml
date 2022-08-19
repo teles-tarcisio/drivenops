@@ -1,0 +1,12 @@
+name: AWS checkout
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  AWSCheckout:
+    runs-on: self-hosted
+    steps:
+      - name: Copy code from repository
+        uses: actions/checkout@v3
