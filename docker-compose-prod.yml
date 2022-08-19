@@ -32,8 +32,8 @@ services:
       - build_react:/var/www/html
     env_file:
       - front-end/.env
-    # networks:
-    # - drivenops_network
+    networks:
+      - drivenops_network
     depends_on:
       - db_drivenops
       - node_app_drivenops
@@ -45,8 +45,8 @@ services:
       - 3000:80
     volumes:
      - build_react:/var/www/html
-  #   networks:
-  #     - drivenops_network
+    networks:
+      - drivenops_network
     depends_on:
       - db_drivenops
       - node_app_drivenops
