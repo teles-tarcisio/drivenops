@@ -25,32 +25,32 @@ services:
     networks:
       - drivenops_network
 
-  # react_app_drivenops:
-  #   build: ./front-end
-  #   container_name: react_app_drivenops
-  #   volumes:
-  #     - build_react:/var/www/html
-  #   env_file:
-  #     - ./front-end/.env
-  #   networks:
-  #     - drivenops_network
-  #   depends_on:
-  #     - db_drivenops
-  #     - node_app_drivenops
+  react_app_drivenops:
+    build: ./front-end
+    container_name: react_app_drivenops
+    volumes:
+      - build_react:/var/www/html
+    env_file:
+      - front-end/.env
+    # networks:
+    # - drivenops_network
+    depends_on:
+      - db_drivenops
+      - node_app_drivenops
   
-  # nginx_drivenops:
-  #   build: ./nginx
-  #   container_name: nginx_drivenops
-  #   ports:
-  #     - 8080:80
-  #   volumes:
-  #     - build_react:/var/www/html
+  nginx_drivenops:
+    build: ./nginx
+    container_name: nginx_drivenops
+    ports:
+      - 3000:80
+    volumes:
+     - build_react:/var/www/html
   #   networks:
   #     - drivenops_network
-  #   depends_on:
-  #     - db_drivenops
-  #     - node_app_drivenops
-  #     - react_app_drivenops
+    depends_on:
+      - db_drivenops
+      - node_app_drivenops
+      - react_app_drivenops
 
 networks:
   drivenops_network:
@@ -58,7 +58,7 @@ networks:
 
 volumes:
   postgres:
-  # build_react:
+  build_react:
 
 
 # docker-compose -f somefile.yml up (...)
