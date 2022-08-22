@@ -9,7 +9,7 @@ jobs:
       - name: create envfile for tests
         uses: SpicyPizza/create-envfile@v1
         with:
-          file_name: .env.test
+          file_name: back-end/.env.test
           envkey_POSTGRES_USER: "postgres"
           envkey_POSTGRES_PASSWORD: "postgres"
           envkey_POSTGRES_DB: "drivenops_tests_db"
