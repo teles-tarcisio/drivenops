@@ -1,0 +1,29 @@
+services:
+  db_drivenops_tests:
+    image: postgres:13
+    container_name: database_tests
+    restart: always
+    ports:
+      - 1234:5432
+    env_file:
+      - .env.test
+    networks:
+      - drivenops_tests
+  
+  node_app_tests:
+    container_name: node_app_tests
+    build: .
+    ports:
+      - 4000:5000
+    depends_on:
+      - db_drivenops_tests
+    env_file:
+      - .env.test
+    networks:
+      - drivenops_tests
+
+networks:
+  drivenops_tests:
+    driver: bridge
+  
+# docker-compose -f docker-compose_tests.yml run node_app_tests npm run test
