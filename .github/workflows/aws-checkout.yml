@@ -1,4 +1,4 @@
-name: AWS Checkout
+name: AWS checkout
 on:
   push:
     branches:
