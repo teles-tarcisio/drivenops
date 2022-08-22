@@ -13,7 +13,7 @@ jobs:
           envkey_POSTGRES_USER: "postgres"
           envkey_POSTGRES_PASSWORD: "postgres"
           envkey_POSTGRES_DB: "drivenops_tests_db"
-          envkey_POSTGRES_URL: "postgres://postgres:postgres@db_drivenops_tests:5432/drivenops_tests_db"
+          envkey_DATABASE_URL: "postgres://postgres:postgres@db_drivenops_tests:5432/drivenops_tests_db"
       - name: Run tests
         run: docker-compose -f back-end/docker-compose_tests.yml run node_app_tests npm run test
       - name: Build
